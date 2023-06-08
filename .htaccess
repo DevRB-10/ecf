@@ -1,0 +1,4 @@
+#AuthName "Page d'administration protégée, veuillez vous identifier"
+#AuthType Basic
+#AuthUserFile "/home/clients/5651b8c6daf1e874a0c30721767bd935/cda/renaud/ecf/code/ecf.htpasswd"
+#Require valid-user
