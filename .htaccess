@@ -1,4 +1,9 @@
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule . index.php [L]
+
+
 #AuthName "Page d'administration protégée, veuillez vous identifier"
 #AuthType Basic
-#AuthUserFile "/home/clients/5651b8c6daf1e874a0c30721767bd935/cda/renaud/ecf/code/ecf.htpasswd"
+#AuthUserFile "/Users/59A5660/OneDrive - AFPA/Bureau/ecf/Ressources/src/.htpasswd"
 #Require valid-user

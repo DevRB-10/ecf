@@ -1,6 +1,5 @@
 {
     "require": {
-        "aura/autoload": "^2.0",
         "altorouter/altorouter": "^2.0"
     }
 }

@@ -4,22 +4,8 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit4500d5b4f9812d4cf77142422e347eaa
+class ComposerStaticInit4eee20418492133a8b3a8ba91a96bcb4
 {
-    public static $prefixLengthsPsr4 = array (
-        'A' => 
-        array (
-            'Aura\\Autoload\\' => 14,
-        ),
-    );
-
-    public static $prefixDirsPsr4 = array (
-        'Aura\\Autoload\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/aura/autoload/src',
-        ),
-    );
-
     public static $classMap = array (
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
@@ -28,9 +14,7 @@ class ComposerStaticInit4500d5b4f9812d4cf77142422e347eaa
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit4500d5b4f9812d4cf77142422e347eaa::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit4500d5b4f9812d4cf77142422e347eaa::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit4500d5b4f9812d4cf77142422e347eaa::$classMap;
+            $loader->classMap = ComposerStaticInit4eee20418492133a8b3a8ba91a96bcb4::$classMap;
 
         }, null, ClassLoader::class);
     }

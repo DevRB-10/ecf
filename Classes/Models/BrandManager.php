@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace Classes\Models;
 use PDO;
 use PDOException;
 
@@ -41,7 +41,7 @@ class BrandManager{
     public function findAll():array
     {
         $q = $this->pdo->query('SELECT id, marque as `name`, date_modif as `update` FROM marques');
-        return $q->fetchAll(PDO::FETCH_CLASS, '\App\Models\Brand');
+        return $q->fetchAll(PDO::FETCH_CLASS, '\Classes\Models\Brand');
     }
 
 
@@ -59,7 +59,7 @@ class BrandManager{
             $q= $this->pdo->query('SELECT id, marque as `name`, date_modif as `update` 
             FROM marques 
             WHERE id=' . $id);
-            return $q->fetchAll(PDO::FETCH_CLASS, '\App\Models\Brand')[0];
+            return $q->fetchAll(PDO::FETCH_CLASS, '\Classes\Models\Brand')[0];
         }
     }
 
