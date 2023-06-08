@@ -8,7 +8,16 @@ use PDOException;
 
 class BrandManager
 {
+    /**
+     * variable où pdo sera sauvegardé
+     *
+     * @var [type]
+     */
     protected $pdo;
+
+    /**
+     * fonction constructeur
+     */
     public function __construct()
     {
         
@@ -20,6 +29,14 @@ class BrandManager
          }
     }
 
+    /**
+     * Méthode findAll
+     *
+     * Description : Récupère tous les enregistrements de la table associée à cette classe Manager.
+     * Cette méthode effectue une jointure avec la table "auteurs" pour récupérer les auteurs des citations.
+     *
+     * @return array Un tableau contenant tous les enregistrements sous forme d'objets de l'entité associée.
+     */
     public function findAll(): array
     {
         $sql = "SELECT * FROM marques";
@@ -27,6 +44,15 @@ class BrandManager
         return $q->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Méthode find
+     *
+     * Description : Récupère un enregistrement en fonction de l'ID.
+     * Cette méthode effectue une jointure avec la table "auteurs" pour récupérer l'auteur de la citation.
+     *
+     * @param int $id L'ID de l'enregistrement à rechercher.
+     * @return mixed L'enregistrement correspondant sous forme d'objet de l'entité associée ou faux.
+     */
     public function find(int $id)
     {
         $sql = 'SELECT id, marque AS name, date_modif AS date
@@ -36,14 +62,14 @@ class BrandManager
         //return $q->fetchAll(PDO::FETCH_CLASS, '\App\Model\Brand)[0];
     }
 
-    /* public function create(Brand $brand): Brand
+    /* public function create(Brand $brand)
     {
         $sql = 'INSERT INTO marques(marque)
                 VALUES (?)';
         $q = $this->pdo->prepare($sql);
 
-        $q->execute($brand);
-        $id = $this->pdo->lastInsertId($id);
-        return $q;
-    }  */
+        $q->execute($brand->getId());
+        $q->execute($brand->getName());
+        return $this;
+    } */  
 }
