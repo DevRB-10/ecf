@@ -1,6 +1,7 @@
 <?php
 
 use Classes\Controllers\BrandController;
+use Classes\Controllers\API\ApiController;
 
 $router = new AltoRouter();
 
@@ -9,9 +10,25 @@ $router->map( 'GET', '/marques', function() {
     (new BrandController())->index();
 });
 
-$router->map( 'GET', '/marques/add', function() {
+$router->map( 'GET|POST', '/marques/add', function() {
     (new BrandController())->add();
 });
+
+
+
+$router->map( 'GET', '/api/marques', function() {
+    (new ApiController())->getMarques();
+});
+
+$router->map( 'GET', '/consoapi', function() {
+    require_once '/consoApi/index.php';
+});
+
+$router->map( 'GET', '/meteo', function() {
+    require_once '/meteo/index.php';
+});
+
+
 
 $match = $router->match();
 

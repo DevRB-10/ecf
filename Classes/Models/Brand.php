@@ -13,21 +13,21 @@ class Brand
      *
      * @var integer|null
      */
-    protected ?int $id = null;
+    public ?int $id = null;
 
     /**
      * Nom de la Marque
      *
      * @var string|null
      */
-    protected ?string $name = null;
+    public ?string $name = null;
 
     /**
      * Date de la dernière modification
      *
      * @var string|null
      */
-    protected ?string $update = null;
+    public ?string $update = null;
 
 
     public function __construct(array $data = null)

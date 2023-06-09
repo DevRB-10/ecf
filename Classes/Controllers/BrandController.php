@@ -17,12 +17,14 @@ class BrandController
     public function index()
     {
         $data = $this->manager->findAll();
-      
         require_once ROOT . '/views/marques.index.php';
-
         
     }
 
+    public function api()
+    {
+        require_once ROOT . '/Classes/Controllers/Api/ApiController.php';
+    }
 
     public function add()
     {
